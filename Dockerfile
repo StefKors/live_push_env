@@ -7,3 +7,7 @@ RUN echo "========================================================"
 RUN echo "ARG look at that >>>>>${NPM_TOKEN}<<<<<"
 RUN echo "ENV look at that >>>>>${NPM_TOKEN_ENV}<<<<<"
 RUN echo "========================================================"
+
+WORKDIR /usr/src/app
+COPY . ./
+CMD ["node", "index.js"]

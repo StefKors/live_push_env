@@ -3,14 +3,15 @@
   - [balena push 0eb3102.local -c --build-arg NPM_TOKEN=0acc7a49-830e-4254-bfe7-47dcfeb578b8 --debug](#balena-push-0eb3102local--c---build-arg-npm_token0acc7a49-830e-4254-bfe7-47dcfeb578b8---debug-1)
   - [balena push 0eb3102.local -c --build-arg main:NPM_TOKEN=0acc7a49-830e-4254-bfe7-47dcfeb578b8 --debug](#balena-push-0eb3102local--c---build-arg-mainnpm_token0acc7a49-830e-4254-bfe7-47dcfeb578b8---debug)
   - [balena push 0eb3102.local -c --build-arg main:NPM_TOKEN="0acc7a49-830e-4254-bfe7-47dcfeb578b8" --debug](#balena-push-0eb3102local--c---build-arg-mainnpm_token0acc7a49-830e-4254-bfe7-47dcfeb578b8---debug-1)
-  - [balena push 0eb3102.local -c --env NPM_TOKEN="0acc7a49-830e-4254-bfe7-47dcfeb578c5" --debug](#balena-push-0eb3102local--c---env-npm_token0acc7a49-830e-4254-bfe7-47dcfeb578c5---debug)
-  - [balena push 0eb3102.local -c --env NPM_TOKEN=0acc7a49-830e-4254-bfe7-47dcfeb578c5 --debug](#balena-push-0eb3102local--c---env-npm_token0acc7a49-830e-4254-bfe7-47dcfeb578c5---debug-1)
-  - [balena push 0eb3102.local -c --env main:NPM_TOKEN=0acc7a49-830e-4254-bfe7-47dcfeb578c5 --debug](#balena-push-0eb3102local--c---env-mainnpm_token0acc7a49-830e-4254-bfe7-47dcfeb578c5---debug)
-  - [balena push 0eb3102.local -c --env main:NPM_TOKEN="0acc7a49-830e-4254-bfe7-47dcfeb578c5" --debug](#balena-push-0eb3102local--c---env-mainnpm_token0acc7a49-830e-4254-bfe7-47dcfeb578c5---debug-1)
+  - [balena push 0eb3102.local -c --env NPM_TOKEN="0acc7a49-830e-4254-bfe7-47dcfeb578b8" --debug](#balena-push-0eb3102local--c---env-npm_token0acc7a49-830e-4254-bfe7-47dcfeb578b8---debug)
+  - [balena push 0eb3102.local -c --env NPM_TOKEN=0acc7a49-830e-4254-bfe7-47dcfeb578b8 --debug](#balena-push-0eb3102local--c---env-npm_token0acc7a49-830e-4254-bfe7-47dcfeb578b8---debug-1)
+  - [balena push 0eb3102.local -c --env main:NPM_TOKEN=0acc7a49-830e-4254-bfe7-47dcfeb578b8 --debug](#balena-push-0eb3102local--c---env-mainnpm_token0acc7a49-830e-4254-bfe7-47dcfeb578b8---debug)
+  - [balena push 0eb3102.local -c --env main:NPM_TOKEN="0acc7a49-830e-4254-bfe7-47dcfeb578b8" --debug](#balena-push-0eb3102local--c---env-mainnpm_token0acc7a49-830e-4254-bfe7-47dcfeb578b8---debug-1)
   - [echo on device](#echo-on-device)
+  - [echo on device main container](#echo-on-device-main-container)
 
 # Balena live-push can't find ENV
-Balena live-push can't find the ENV variable in teh build step.
+Balena live-push can't find the ENV variable in the build step.
 
 |                    |                      |
 | ------------------ | -------------------- |
@@ -366,7 +367,7 @@ Balena live-push can't find the ENV variable in teh build step.
 [Live]    Waiting for device state to settle...
 ^C
 ```
-## balena push 0eb3102.local -c --env NPM_TOKEN="0acc7a49-830e-4254-bfe7-47dcfeb578c5" --debug     
+## balena push 0eb3102.local -c --env NPM_TOKEN="0acc7a49-830e-4254-bfe7-47dcfeb578b8" --debug     
 |                               |       |
 | ----------------------------- | ----- |
 | with `main:` before envvar    | `[ ]` |
@@ -377,7 +378,7 @@ Balena live-push can't find the ENV variable in teh build step.
 | --env                         | `[x]` |
 ```bash
 ~/Code/live_push_env 
-❯ balena push 0eb3102.local -c --env NPM_TOKEN="0acc7a49-830e-4254-bfe7-47dcfeb578c5" --debug     
+❯ balena push 0eb3102.local -c --env NPM_TOKEN="0acc7a49-830e-4254-bfe7-47dcfeb578b8" --debug     
 [debug] Using . as build source
 [Debug]   Checking we can access device
 [Debug]   Sending request to http://192.168.2.87:48484/ping
@@ -440,7 +441,7 @@ Balena live-push can't find the ENV variable in teh build step.
 [Build]   [main] Successfully tagged local_image_main:latest
 [Debug]   Setting device state...
 [Debug]   Sending request to http://192.168.2.87:48484/v2/local/target-state
-[Debug]   Sending target state: {"local":{"name":"hidden-sea","config":{"SUPERVISOR_DELTA_VERSION":"3","SUPERVISOR_DELTA":"1","SUPERVISOR_LOCAL_MODE":"1","SUPERVISOR_POLL_INTERVAL":"900000","SUPERVISOR_VPN_CONTROL":"true","SUPERVISOR_INSTANT_UPDATE_TRIGGER":"true","SUPERVISOR_CONNECTIVITY_CHECK":"true","SUPERVISOR_LOG_CONTROL":"true","SUPERVISOR_DELTA_REQUEST_TIMEOUT":"30000","SUPERVISOR_DELTA_APPLY_TIMEOUT":"0","SUPERVISOR_DELTA_RETRY_COUNT":"30","SUPERVISOR_DELTA_RETRY_INTERVAL":"10000","SUPERVISOR_OVERRIDE_LOCK":"false","SUPERVISOR_PERSISTENT_LOGGING":"false"},"apps":{"1":{"name":"localapp","commit":"localrelease","releaseId":"1","services":{"1":{"environment":{"NPM_TOKEN":"0acc7a49-830e-4254-bfe7-47dcfeb578c5"},"labels":{"io.resin.features.kernel-modules":"1","io.resin.features.firmware":"1","io.resin.features.dbus":"1","io.resin.features.supervisor-api":"1","io.resin.features.resin-api":"1"},"privileged":true,"tty":true,"restart":"always","network_mode":"host","volumes":["resin-data:/data"],"imageId":1,"serviceName":"main","serviceId":1,"image":"local_image_main:latest","running":true}},"volumes":{"resin-data":{}},"networks":{}}}},"dependent":{"config":{}}}
+[Debug]   Sending target state: {"local":{"name":"hidden-sea","config":{"SUPERVISOR_DELTA_VERSION":"3","SUPERVISOR_DELTA":"1","SUPERVISOR_LOCAL_MODE":"1","SUPERVISOR_POLL_INTERVAL":"900000","SUPERVISOR_VPN_CONTROL":"true","SUPERVISOR_INSTANT_UPDATE_TRIGGER":"true","SUPERVISOR_CONNECTIVITY_CHECK":"true","SUPERVISOR_LOG_CONTROL":"true","SUPERVISOR_DELTA_REQUEST_TIMEOUT":"30000","SUPERVISOR_DELTA_APPLY_TIMEOUT":"0","SUPERVISOR_DELTA_RETRY_COUNT":"30","SUPERVISOR_DELTA_RETRY_INTERVAL":"10000","SUPERVISOR_OVERRIDE_LOCK":"false","SUPERVISOR_PERSISTENT_LOGGING":"false"},"apps":{"1":{"name":"localapp","commit":"localrelease","releaseId":"1","services":{"1":{"environment":{"NPM_TOKEN":"0acc7a49-830e-4254-bfe7-47dcfeb578b8"},"labels":{"io.resin.features.kernel-modules":"1","io.resin.features.firmware":"1","io.resin.features.dbus":"1","io.resin.features.supervisor-api":"1","io.resin.features.resin-api":"1"},"privileged":true,"tty":true,"restart":"always","network_mode":"host","volumes":["resin-data:/data"],"imageId":1,"serviceName":"main","serviceId":1,"image":"local_image_main:latest","running":true}},"volumes":{"resin-data":{}},"networks":{}}}},"dependent":{"config":{}}}
 [Debug]   Sending request to http://192.168.2.87:48484/v2/local/target-state
 
 [Debug]   Sending request to http://192.168.2.87:48484/v2/local/device-info
@@ -455,7 +456,7 @@ Balena live-push can't find the ENV variable in teh build step.
 [Logs]    [7/29/2020, 1:01:39 PM] Starting service 'main sha256:38584a50e72e07b678f633ba56c9b84b7ff5b5f4d5959de5e0254db476638f85'
 ^C
 ```
-## balena push 0eb3102.local -c --env NPM_TOKEN=0acc7a49-830e-4254-bfe7-47dcfeb578c5 --debug  
+## balena push 0eb3102.local -c --env NPM_TOKEN=0acc7a49-830e-4254-bfe7-47dcfeb578b8 --debug  
 |                               |       |
 | ----------------------------- | ----- |
 | with `main:` before envvar    | `[ ]` |
@@ -466,7 +467,7 @@ Balena live-push can't find the ENV variable in teh build step.
 | --env                         | `[x]` |
 ```bash
 ~/Code/live_push_env 
-❯ balena push 0eb3102.local -c --env NPM_TOKEN=0acc7a49-830e-4254-bfe7-47dcfeb578c5 --debug  
+❯ balena push 0eb3102.local -c --env NPM_TOKEN=0acc7a49-830e-4254-bfe7-47dcfeb578b8 --debug  
 [debug] Using . as build source
 [Debug]   Checking we can access device
 [Debug]   Sending request to http://192.168.2.87:48484/ping
@@ -529,14 +530,14 @@ Balena live-push can't find the ENV variable in teh build step.
 [Build]   [main] Successfully tagged local_image_main:latest
 [Debug]   Setting device state...
 [Debug]   Sending request to http://192.168.2.87:48484/v2/local/target-state
-[Debug]   Sending target state: {"local":{"name":"hidden-sea","config":{"SUPERVISOR_DELTA_VERSION":"3","SUPERVISOR_DELTA":"1","SUPERVISOR_LOCAL_MODE":"1","SUPERVISOR_POLL_INTERVAL":"900000","SUPERVISOR_VPN_CONTROL":"true","SUPERVISOR_INSTANT_UPDATE_TRIGGER":"true","SUPERVISOR_CONNECTIVITY_CHECK":"true","SUPERVISOR_LOG_CONTROL":"true","SUPERVISOR_DELTA_REQUEST_TIMEOUT":"30000","SUPERVISOR_DELTA_APPLY_TIMEOUT":"0","SUPERVISOR_DELTA_RETRY_COUNT":"30","SUPERVISOR_DELTA_RETRY_INTERVAL":"10000","SUPERVISOR_OVERRIDE_LOCK":"false","SUPERVISOR_PERSISTENT_LOGGING":"false"},"apps":{"1":{"name":"localapp","commit":"localrelease","releaseId":"1","services":{"1":{"environment":{"NPM_TOKEN":"0acc7a49-830e-4254-bfe7-47dcfeb578c5"},"labels":{"io.resin.features.kernel-modules":"1","io.resin.features.firmware":"1","io.resin.features.dbus":"1","io.resin.features.supervisor-api":"1","io.resin.features.resin-api":"1"},"privileged":true,"tty":true,"restart":"always","network_mode":"host","volumes":["resin-data:/data"],"imageId":1,"serviceName":"main","serviceId":1,"image":"local_image_main:latest","running":true}},"volumes":{"resin-data":{}},"networks":{}}}},"dependent":{"config":{}}}
+[Debug]   Sending target state: {"local":{"name":"hidden-sea","config":{"SUPERVISOR_DELTA_VERSION":"3","SUPERVISOR_DELTA":"1","SUPERVISOR_LOCAL_MODE":"1","SUPERVISOR_POLL_INTERVAL":"900000","SUPERVISOR_VPN_CONTROL":"true","SUPERVISOR_INSTANT_UPDATE_TRIGGER":"true","SUPERVISOR_CONNECTIVITY_CHECK":"true","SUPERVISOR_LOG_CONTROL":"true","SUPERVISOR_DELTA_REQUEST_TIMEOUT":"30000","SUPERVISOR_DELTA_APPLY_TIMEOUT":"0","SUPERVISOR_DELTA_RETRY_COUNT":"30","SUPERVISOR_DELTA_RETRY_INTERVAL":"10000","SUPERVISOR_OVERRIDE_LOCK":"false","SUPERVISOR_PERSISTENT_LOGGING":"false"},"apps":{"1":{"name":"localapp","commit":"localrelease","releaseId":"1","services":{"1":{"environment":{"NPM_TOKEN":"0acc7a49-830e-4254-bfe7-47dcfeb578b8"},"labels":{"io.resin.features.kernel-modules":"1","io.resin.features.firmware":"1","io.resin.features.dbus":"1","io.resin.features.supervisor-api":"1","io.resin.features.resin-api":"1"},"privileged":true,"tty":true,"restart":"always","network_mode":"host","volumes":["resin-data:/data"],"imageId":1,"serviceName":"main","serviceId":1,"image":"local_image_main:latest","running":true}},"volumes":{"resin-data":{}},"networks":{}}}},"dependent":{"config":{}}}
 [Debug]   Sending request to http://192.168.2.87:48484/v2/local/target-state
 
 [Debug]   Sending request to http://192.168.2.87:48484/v2/local/device-info
 [Info]    Streaming device logs...
 
 ```
-## balena push 0eb3102.local -c --env main:NPM_TOKEN=0acc7a49-830e-4254-bfe7-47dcfeb578c5 --debug
+## balena push 0eb3102.local -c --env main:NPM_TOKEN=0acc7a49-830e-4254-bfe7-47dcfeb578b8 --debug
 |                               |       |
 | ----------------------------- | ----- |
 | with `main:` before envvar    | `[x]` |
@@ -547,7 +548,7 @@ Balena live-push can't find the ENV variable in teh build step.
 | --env                         | `[x]` |
 ```bash
 ~/Code/live_push_env 
-❯ balena push 0eb3102.local -c --env main:NPM_TOKEN=0acc7a49-830e-4254-bfe7-47dcfeb578c5 --debug
+❯ balena push 0eb3102.local -c --env main:NPM_TOKEN=0acc7a49-830e-4254-bfe7-47dcfeb578b8 --debug
 [debug] Using . as build source
 [Debug]   Checking we can access device
 [Debug]   Sending request to http://192.168.2.87:48484/ping
@@ -610,7 +611,7 @@ Balena live-push can't find the ENV variable in teh build step.
 [Build]   [main] Successfully tagged local_image_main:latest
 [Debug]   Setting device state...
 [Debug]   Sending request to http://192.168.2.87:48484/v2/local/target-state
-[Debug]   Sending target state: {"local":{"name":"hidden-sea","config":{"SUPERVISOR_DELTA_VERSION":"3","SUPERVISOR_DELTA":"1","SUPERVISOR_LOCAL_MODE":"1","SUPERVISOR_POLL_INTERVAL":"900000","SUPERVISOR_VPN_CONTROL":"true","SUPERVISOR_INSTANT_UPDATE_TRIGGER":"true","SUPERVISOR_CONNECTIVITY_CHECK":"true","SUPERVISOR_LOG_CONTROL":"true","SUPERVISOR_DELTA_REQUEST_TIMEOUT":"30000","SUPERVISOR_DELTA_APPLY_TIMEOUT":"0","SUPERVISOR_DELTA_RETRY_COUNT":"30","SUPERVISOR_DELTA_RETRY_INTERVAL":"10000","SUPERVISOR_OVERRIDE_LOCK":"false","SUPERVISOR_PERSISTENT_LOGGING":"false"},"apps":{"1":{"name":"localapp","commit":"localrelease","releaseId":"1","services":{"1":{"environment":{"NPM_TOKEN":"0acc7a49-830e-4254-bfe7-47dcfeb578c5"},"labels":{"io.resin.features.kernel-modules":"1","io.resin.features.firmware":"1","io.resin.features.dbus":"1","io.resin.features.supervisor-api":"1","io.resin.features.resin-api":"1"},"privileged":true,"tty":true,"restart":"always","network_mode":"host","volumes":["resin-data:/data"],"imageId":1,"serviceName":"main","serviceId":1,"image":"local_image_main:latest","running":true}},"volumes":{"resin-data":{}},"networks":{}}}},"dependent":{"config":{}}}
+[Debug]   Sending target state: {"local":{"name":"hidden-sea","config":{"SUPERVISOR_DELTA_VERSION":"3","SUPERVISOR_DELTA":"1","SUPERVISOR_LOCAL_MODE":"1","SUPERVISOR_POLL_INTERVAL":"900000","SUPERVISOR_VPN_CONTROL":"true","SUPERVISOR_INSTANT_UPDATE_TRIGGER":"true","SUPERVISOR_CONNECTIVITY_CHECK":"true","SUPERVISOR_LOG_CONTROL":"true","SUPERVISOR_DELTA_REQUEST_TIMEOUT":"30000","SUPERVISOR_DELTA_APPLY_TIMEOUT":"0","SUPERVISOR_DELTA_RETRY_COUNT":"30","SUPERVISOR_DELTA_RETRY_INTERVAL":"10000","SUPERVISOR_OVERRIDE_LOCK":"false","SUPERVISOR_PERSISTENT_LOGGING":"false"},"apps":{"1":{"name":"localapp","commit":"localrelease","releaseId":"1","services":{"1":{"environment":{"NPM_TOKEN":"0acc7a49-830e-4254-bfe7-47dcfeb578b8"},"labels":{"io.resin.features.kernel-modules":"1","io.resin.features.firmware":"1","io.resin.features.dbus":"1","io.resin.features.supervisor-api":"1","io.resin.features.resin-api":"1"},"privileged":true,"tty":true,"restart":"always","network_mode":"host","volumes":["resin-data:/data"],"imageId":1,"serviceName":"main","serviceId":1,"image":"local_image_main:latest","running":true}},"volumes":{"resin-data":{}},"networks":{}}}},"dependent":{"config":{}}}
 [Debug]   Sending request to http://192.168.2.87:48484/v2/local/target-state
 
 [Debug]   Sending request to http://192.168.2.87:48484/v2/local/device-info
@@ -622,7 +623,7 @@ Balena live-push can't find the ENV variable in teh build step.
 [Logs]    [7/29/2020, 1:02:04 PM] Installing service 'main sha256:2a665997976dcafb3042f9f6c953b251fed408ee3674aae55ac8f47c0d976028'
 ^C
 ```
-## balena push 0eb3102.local -c --env main:NPM_TOKEN="0acc7a49-830e-4254-bfe7-47dcfeb578c5" --debug
+## balena push 0eb3102.local -c --env main:NPM_TOKEN="0acc7a49-830e-4254-bfe7-47dcfeb578b8" --debug
 |                               |       |
 | ----------------------------- | ----- |
 | with `main:` before envvar    | `[x]` |
@@ -634,7 +635,7 @@ Balena live-push can't find the ENV variable in teh build step.
 
 ```bash
 ~/Code/live_push_env 
-❯ balena push 0eb3102.local -c --env main:NPM_TOKEN="0acc7a49-830e-4254-bfe7-47dcfeb578c5" --debug
+❯ balena push 0eb3102.local -c --env main:NPM_TOKEN="0acc7a49-830e-4254-bfe7-47dcfeb578b8" --debug
 [debug] Using . as build source
 [Debug]   Checking we can access device
 [Debug]   Sending request to http://192.168.2.87:48484/ping
@@ -697,7 +698,7 @@ Balena live-push can't find the ENV variable in teh build step.
 [Build]   [main] Successfully tagged local_image_main:latest
 [Debug]   Setting device state...
 [Debug]   Sending request to http://192.168.2.87:48484/v2/local/target-state
-[Debug]   Sending target state: {"local":{"name":"hidden-sea","config":{"SUPERVISOR_DELTA_VERSION":"3","SUPERVISOR_DELTA":"1","SUPERVISOR_LOCAL_MODE":"1","SUPERVISOR_POLL_INTERVAL":"900000","SUPERVISOR_VPN_CONTROL":"true","SUPERVISOR_INSTANT_UPDATE_TRIGGER":"true","SUPERVISOR_CONNECTIVITY_CHECK":"true","SUPERVISOR_LOG_CONTROL":"true","SUPERVISOR_DELTA_REQUEST_TIMEOUT":"30000","SUPERVISOR_DELTA_APPLY_TIMEOUT":"0","SUPERVISOR_DELTA_RETRY_COUNT":"30","SUPERVISOR_DELTA_RETRY_INTERVAL":"10000","SUPERVISOR_OVERRIDE_LOCK":"false","SUPERVISOR_PERSISTENT_LOGGING":"false"},"apps":{"1":{"name":"localapp","commit":"localrelease","releaseId":"1","services":{"1":{"environment":{"NPM_TOKEN":"0acc7a49-830e-4254-bfe7-47dcfeb578c5"},"labels":{"io.resin.features.kernel-modules":"1","io.resin.features.firmware":"1","io.resin.features.dbus":"1","io.resin.features.supervisor-api":"1","io.resin.features.resin-api":"1"},"privileged":true,"tty":true,"restart":"always","network_mode":"host","volumes":["resin-data:/data"],"imageId":1,"serviceName":"main","serviceId":1,"image":"local_image_main:latest","running":true}},"volumes":{"resin-data":{}},"networks":{}}}},"dependent":{"config":{}}}
+[Debug]   Sending target state: {"local":{"name":"hidden-sea","config":{"SUPERVISOR_DELTA_VERSION":"3","SUPERVISOR_DELTA":"1","SUPERVISOR_LOCAL_MODE":"1","SUPERVISOR_POLL_INTERVAL":"900000","SUPERVISOR_VPN_CONTROL":"true","SUPERVISOR_INSTANT_UPDATE_TRIGGER":"true","SUPERVISOR_CONNECTIVITY_CHECK":"true","SUPERVISOR_LOG_CONTROL":"true","SUPERVISOR_DELTA_REQUEST_TIMEOUT":"30000","SUPERVISOR_DELTA_APPLY_TIMEOUT":"0","SUPERVISOR_DELTA_RETRY_COUNT":"30","SUPERVISOR_DELTA_RETRY_INTERVAL":"10000","SUPERVISOR_OVERRIDE_LOCK":"false","SUPERVISOR_PERSISTENT_LOGGING":"false"},"apps":{"1":{"name":"localapp","commit":"localrelease","releaseId":"1","services":{"1":{"environment":{"NPM_TOKEN":"0acc7a49-830e-4254-bfe7-47dcfeb578b8"},"labels":{"io.resin.features.kernel-modules":"1","io.resin.features.firmware":"1","io.resin.features.dbus":"1","io.resin.features.supervisor-api":"1","io.resin.features.resin-api":"1"},"privileged":true,"tty":true,"restart":"always","network_mode":"host","volumes":["resin-data:/data"],"imageId":1,"serviceName":"main","serviceId":1,"image":"local_image_main:latest","running":true}},"volumes":{"resin-data":{}},"networks":{}}}},"dependent":{"config":{}}}
 [Debug]   Sending request to http://192.168.2.87:48484/v2/local/target-state
 
 [Debug]   Sending request to http://192.168.2.87:48484/v2/local/device-info
@@ -714,4 +715,11 @@ Balena live-push can't find the ENV variable in teh build step.
 root@0eb3102:~# echo $NPM_TOKEN
 
 root@0eb3102:~# 
+```
+## echo on device main container
+```
+❯ balena ssh 0eb3102.local main
+root@0eb3102:/usr/src/app# echo $NPM_TOKEN
+0acc7a49-830e-4254-bfe7-47dcfeb578b8
+root@0eb3102:/usr/src/app#
 ```
